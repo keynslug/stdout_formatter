@@ -108,7 +108,7 @@ maybe_set_format_string(#paragraph{props = #{format := _}} = Para) ->
     Para;
 maybe_set_format_string(#paragraph{content = Content, props = Props} = Para)
   when is_atom(Content) ->
-    Para#paragraph{props = Props#{format => "~s"}};
+    Para#paragraph{props = Props#{format => "~ts"}};
 maybe_set_format_string(#paragraph{content = Content, props = Props} = Para)
   when is_integer(Content) ->
     Para#paragraph{props = Props#{format => "~b"}};

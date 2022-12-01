@@ -306,7 +306,7 @@ to_string(#formatted_block{lines = Lines}, _) ->
         "\n",
         lists:map(
           fun(#formatted_line{content = Line}) ->
-                  io_lib:format("~s", [Line])
+                  io_lib:format("~ts", [Line])
           end, Lines)));
 to_string(Term, InheritedProps) ->
     to_string(format(Term, InheritedProps)).
@@ -330,7 +330,7 @@ display(Term) ->
 display(#formatted_block{lines = Lines}, _) ->
     lists:foreach(
       fun(#formatted_line{content = Line}) ->
-              io:format("~s~n", [Line])
+              io:format("~ts~n", [Line])
       end,
       Lines);
 display(Term, InheritedProps) ->

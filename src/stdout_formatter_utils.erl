@@ -145,4 +145,4 @@ displayed_length(Line) ->
     string:length(WithoutEscSeq).
 
 remove_escape_sequences(Line) ->
-    re:replace(Line, "\e\\[[^m]+m", "", [global, {return, list}]).
+    re:replace(Line, "\e\\[[^m]+m", "", [global, {return, list}, unicode]).
